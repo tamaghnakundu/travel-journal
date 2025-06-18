@@ -1,3 +1,16 @@
+import Header from "./components/Header";
+import Entry from "./components/Entry";
+import data from "./data";
+
 export default function () {
-  return <h1>App component</h1>;
+  const elements = data.map((entry) => {
+    return <Entry key={entry.id} {...entry} />;
+  });
+
+  return (
+    <>
+      <Header />
+      {elements}
+    </>
+  );
 }
